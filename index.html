@@ -8,7 +8,6 @@
   <meta property="og:title" content="Ferienhaus Langeoog">
   <meta property="og:description" content="Gemütliches Ferienhaus auf Langeoog – buchen Sie jetzt Ihren Aufenthalt!">
   <meta property="og:image" content="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=80">
-  <!-- Bootstrap via CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,15 +22,11 @@
 <body>
 <header class="hero">
   <div class="hero-overlay text-center">
-    <h1 class="display-4 fw-bold">Ferienhaus Beispiel</h1>
-    <p class="lead">Entspannen inmitten der Natur – jetzt anfragen!</p>
+    <h1 class="lead">Entspannen auf Langeoog – jetzt anfragen!</h1>
     <a href="#kontakt" class="btn btn-primary btn-lg">Kontakt</a>
   </div>
 </header>
 
-<main class="container py-5">
-  <section class="mb-5">
-    
 <div class="swiper">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
@@ -46,32 +41,28 @@
       <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
            alt="Schlafzimmer" loading="lazy">
     </div>
-</div>
+  </div>
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
   <div class="swiper-pagination"></div>
 </div>
-  </section>
 
   <section id="kontakt" class="text-center">
     <h2 class="h3 mb-3">Kontakt</h2>
-    <p class="mb-1"><a href="mailto:info@beispielhaus.de">info@beispielhaus.de</a></p>
-    <p>+49 123 456789</p>
+    <p class="mb-1"><a href="mailto:info@beispielhaus.de">langeoog.poldi31@gmail.com</a></p>
   </section>
 </main>
 
-<footer class="bg-light py-4 text-center">
-  <small>&copy; 2025 Beispielhaus</small>
-</footer>
-
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 <script defer>
-new Swiper('.swiper',{
-  loop:true,
-  grabCursor:true,
-  pagination:{el:'.swiper-pagination',clickable:true},
-  navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'}
-});
+  document.addEventListener('DOMContentLoaded', () => {
+    new Swiper('.swiper', {
+      loop: true,
+      grabCursor: true,
+      slideToClickedSlide: true   // Klick wechselt jetzt zuverlässig
+    });
+  });
+</script>
 </script>
 </body>
 </html>
