@@ -56,6 +56,7 @@
       font-size: 2.4rem;
       text-transform: uppercase;
       color: var(--brand);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.18); /* leichter Textschatten */
     }
 
     @media (min-width: 768px){
@@ -67,6 +68,7 @@
     .hero-sub{
       font-size: 1.15rem;
       margin-top: 1rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.12); /* subtiler Schatten */
     }
 
     .hero-badge{
@@ -152,6 +154,22 @@
     .section-subtext{
       font-size: 0.95rem;
       color: #5b6a75;
+    }
+
+    /* kleine Highlight-Pille */
+    .highlight-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:0.4rem;
+      padding:0.35rem 0.9rem;
+      border-radius:999px;
+      background:rgba(31,79,114,0.06);
+      color:var(--brand);
+      font-size:0.85rem;
+    }
+
+    .highlight-pill span{
+      font-weight:600;
     }
 
     /* Kontakt */
@@ -244,7 +262,6 @@
               <span>Ruhige Lage</span>
               <span>ca. 500 m bis zum Strand</span>
               <span>Familienfreundlich</span>
-              <span>Fahrradfreundlich</span>
             </div>
           </div>
         </div>
@@ -306,7 +323,42 @@
     </div>
   </section>
 
-  <!-- 3. BUCHUNG & KONTAKT -->
+  <!-- 3. AUSSTATTUNG & ECKDATEN -->
+  <section class="container my-4 my-md-5">
+    <div class="card section-card">
+      <div class="card-body">
+        <h2 class="section-heading h4 mb-2">Ausstattung &amp; Eckdaten</h2>
+        <p class="section-subtext mb-3">
+          Unsere Ferienwohnung bietet alles, was Sie für eine entspannte Zeit auf Langeoog brauchen.
+        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="list-unstyled mb-2">
+              <li>• 2 Schlafzimmer mit Doppelbetten</li>
+              <li>• Großzügiger Wohn- und Essbereich</li>
+              <li>• Voll ausgestattete Küche</li>
+              <li>• Modernes Bad mit Dusche</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-unstyled mb-2">
+              <li>• Terrasse und Gartenbereich</li>
+              <li>• WLAN und TV</li>
+              <li>• Ruhige Lage in einer Nebenstraße</li>
+              <li>• Ideal für Paare und Familien</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-3">
+          <div class="highlight-pill">
+            <span>Direkte, persönliche Vermietung</span> – ohne Zusatzgebühren.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BUCHUNG & KONTAKT -->
   <section class="container my-4 my-md-5">
     <div class="card section-card contact-card">
       <div class="card-body">
@@ -332,7 +384,7 @@
     </div>
   </section>
 
-  <!-- 4. BELEGUNGSKALENDER -->
+  <!-- 5. BELEGUNGSKALENDER -->
   <section class="container my-4 my-md-5">
     <div class="card section-card calendar-card">
       <div class="card-body">
