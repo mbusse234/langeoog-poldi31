@@ -107,7 +107,7 @@
 
     /* Carousel */
     .carousel-wrapper{
-      margin-top: -2rem;
+      margin-top: -1.5rem;
       margin-bottom: 3.5rem;
     }
 
@@ -232,12 +232,12 @@
 </head>
 <body>
 
-  <!-- HERO-BEREICH -->
+  <!-- HERO-BEREICH – nur Text -->
   <div class="hero-wrapper">
     <header class="hero">
       <div class="container">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-7">
+        <div class="row justify-content-center g-4">
+          <div class="col-lg-8">
             <div class="hero-badge">
               <span>Nordseeinsel Langeoog</span>
             </div>
@@ -253,34 +253,12 @@
               <span>Fahrradfreundlich</span>
             </div>
           </div>
-          <div class="col-lg-5">
-            <div class="card hero-card p-4 p-md-4 mt-3 mt-lg-0">
-              <h2 class="section-heading h5 mb-3">Buchung &amp; Kontakt</h2>
-              <p class="mb-2 section-subtext">
-                Schreiben Sie uns für Buchungsanfragen, freie Zeiträume und weitere Informationen
-                zur Ferienwohnung.
-              </p>
-              <address class="mb-3">
-                <strong>Polderweg 31</strong><br>
-                26465 Langeoog
-              </address>
-              <p class="mb-3">
-                E-Mail:
-                <a href="mailto:langeoog.poldi31@gmail.com" class="link-dark">
-                  langeoog.poldi31@gmail.com
-                </a>
-              </p>
-              <a href="mailto:langeoog.poldi31@gmail.com?subject=Anfrage%20Ferienwohnung" class="btn btn-brand w-100 text-white">
-                Jetzt unverbindlich anfragen
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </header>
   </div>
 
-  <!-- BILD-CAROUSEL MIT ALLEN NEUEN FOTOS -->
+  <!-- BILD-CAROUSEL MIT ALLEN FOTOS -->
   <section class="container carousel-wrapper">
     <div id="gallery" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -327,6 +305,32 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Weiter</span>
       </button>
+    </div>
+  </section>
+
+  <!-- BUCHUNG & KONTAKT – JETZT UNTER DEN BILDERN -->
+  <section class="container my-4 my-md-5">
+    <div class="card section-card contact-card">
+      <div class="card-body">
+        <h2 class="section-heading h5 mb-3">Buchung &amp; Kontakt</h2>
+        <p class="mb-2 section-subtext">
+          Schreiben Sie uns für Buchungsanfragen, freie Zeiträume und weitere Informationen
+          zur Ferienwohnung.
+        </p>
+        <address class="mb-3">
+          <strong>Polderweg 31</strong><br>
+          26465 Langeoog
+        </address>
+        <p class="mb-3">
+          E-Mail:
+          <a href="mailto:langeoog.poldi31@gmail.com" class="link-dark">
+            langeoog.poldi31@gmail.com
+          </a>
+        </p>
+        <a href="mailto:langeoog.poldi31@gmail.com?subject=Anfrage%20Ferienwohnung" class="btn btn-brand w-100 text-white">
+          Jetzt unverbindlich anfragen
+        </a>
+      </div>
     </div>
   </section>
 
