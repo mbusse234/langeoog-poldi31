@@ -30,13 +30,15 @@
 
     body{
       font-family: 'Lato', Arial, sans-serif;
-      background: linear-gradient(to bottom, #f9fbfc 0, #f9fbfc 55%, #e7f1f5 100%);
+      /* Durchgehender, ruhiger Hintergrund ohne harte Kante */
+      background: #f5eee4;
       color: var(--text);
+      margin: 0;
     }
 
     .hero-wrapper{
       background: linear-gradient(135deg, #f9fbfc 0, #e6f0f4 40%, #f5eee4 100%);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      /* KEIN border-bottom mehr, damit keine sichtbare Linie entsteht */
     }
 
     .hero{
@@ -164,12 +166,11 @@
 
     .feature-list{
       font-size: 0.95rem;
-      color: #5b6a75;          /* gleiches Grau wie der Text darüber */
+      color: #5b6a75;
     }
 
     .feature-item{
       padding: 0.15rem 0;
-      /* keine Bullet-Punkte, bewusst clean */
     }
 
     /* Neue, kompakte Badge */
