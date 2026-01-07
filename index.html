@@ -13,24 +13,16 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Preload Bilder -->
-  <link rel="preload" as="image" href="hausansicht.jpg">
-  <link rel="preload" as="image" href="strand.jpg">
-  <link rel="preload" as="image" href="garten_terrasse.jpg">
-  <link rel="preload" as="image" href="kueche2.jpg">
-  <link rel="preload" as="image" href="kueche.jpg">
-
   <style>
     :root{
       --brand:#1f4f72;
-      --brand-light:#e6f0f4;
       --sand:#f5eee4;
       --text:#23313b;
     }
 
     body{
       font-family:'Lato',Arial,sans-serif;
-      background:#f5eee4;
+      background:var(--sand);
       color:var(--text);
       margin:0;
     }
@@ -45,13 +37,11 @@
     .hero-title{
       font-family:'Playfair Display',serif;
       font-weight:600;
-      letter-spacing:0.08em;
-      font-size:2.4rem;
+      letter-spacing:.08em;
+      font-size:2.6rem;
       text-transform:uppercase;
       color:var(--brand);
-      text-shadow:0 1px 4px rgba(0,0,0,.18);
     }
-    @media (min-width:768px){.hero-title{font-size:2.8rem;}}
 
     .hero-sub{
       font-size:1.15rem;
@@ -60,7 +50,7 @@
     }
 
     .hero-badge{
-      display:inline-flex;
+      display:inline-block;
       padding:.25rem .75rem;
       border-radius:999px;
       background:rgba(31,79,114,.06);
@@ -71,93 +61,67 @@
       font-weight:600;
     }
 
-    /* NEU: Preis-Badge */
-    .price-badge{
-      display:inline-block;
-      margin-top:1.1rem;
-      padding:.55rem 1.4rem;
-      border-radius:999px;
-      background:#ffffff;
-      border:2px solid var(--brand);
-      color:var(--brand);
-      font-weight:700;
-      font-size:1.05rem;
-      letter-spacing:.03em;
-      box-shadow:0 10px 25px rgba(17,37,53,.18);
+    /* HOCHWERTIGE INFO-BOXEN STATT LISTE */
+    .hero-features{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:.6rem;
+      margin-top:1.4rem;
     }
 
-    .hero-list{
-      margin:.75rem 0 0;
-      padding-left:1.1rem;
-      color:#5b6a75;
-      font-size:1.02rem;
-      line-height:1.5;
+    @media (min-width:768px){
+      .hero-features{
+        grid-template-columns:1fr 1fr;
+      }
     }
-    .hero-list li{margin:.25rem 0;}
+
+    .hero-feature{
+      background:rgba(255,255,255,.9);
+      border-radius:0.9rem;
+      padding:.75rem 1rem;
+      box-shadow:0 6px 18px rgba(17,37,53,.08);
+      display:flex;
+      gap:.75rem;
+      align-items:flex-start;
+      font-size:0.95rem;
+      color:#4f5e68;
+    }
+
+    .hero-feature::before{
+      content:"•";
+      color:var(--brand);
+      font-size:1.4rem;
+      line-height:1;
+      margin-top:-2px;
+    }
+
+    .hero-feature strong{
+      color:var(--brand);
+      font-weight:600;
+    }
 
     .hero-pill{
-      display:inline-flex;
+      display:flex;
       flex-wrap:wrap;
       gap:.5rem;
       margin-top:1.5rem;
-      font-size:.92rem;
+      font-size:.9rem;
     }
+
     .hero-pill span{
       padding:.35rem .8rem;
       border-radius:999px;
-      border:1px solid rgba(0,0,0,.09);
+      border:1px solid rgba(0,0,0,.1);
       background:rgba(255,255,255,.85);
     }
 
-    .carousel-wrapper{margin-top:-1.5rem;margin-bottom:3.5rem;}
-    .carousel-item{border-radius:1.25rem;overflow:hidden;}
-    .carousel-item img{width:100%;height:55vh;object-fit:cover;}
-    @media (max-width:576px){.carousel-item img{height:45vh;}}
-    @media (min-width:992px){
-      .carousel-item img{height:70vh;object-fit:contain;background:#f5eee4;}
+    footer{
+      background:#f4f6f7;
+      border-top:1px solid rgba(0,0,0,.05);
+      text-align:center;
+      padding:1.5rem;
     }
 
-    .section-card{
-      border-radius:1.25rem;
-      border:1px solid rgba(0,0,0,.04);
-      box-shadow:0 14px 35px rgba(17,37,53,.1);
-      background:#fff;
-    }
-
-    .section-heading{
-      font-family:'Playfair Display',serif;
-      font-weight:600;
-      color:var(--brand);
-      letter-spacing:.04em;
-    }
-
-    .section-subtext{font-size:.95rem;color:#5b6a75;}
-
-    .booking-badge{
-      display:inline-flex;
-      gap:.35rem;
-      padding:.45rem 1.2rem;
-      border-radius:999px;
-      background:rgba(31,79,114,.04);
-      border:1px solid rgba(31,79,114,.18);
-      box-shadow:0 6px 18px rgba(15,32,48,.12);
-      font-size:.9rem;
-    }
-    .booking-badge strong{color:var(--brand);}
-
-    .btn-brand{
-      background:var(--brand);
-      border:none;
-      border-radius:999px;
-      font-weight:600;
-      text-transform:uppercase;
-      font-size:.9rem;
-      padding:.7rem 1.1rem;
-    }
-    .btn-brand:hover{background:#163a54;}
-
-    .calendar-frame{border:0;width:100%;height:70vh;min-height:520px;}
-    footer{background:#f4f6f7;border-top:1px solid rgba(0,0,0,.05);}
     footer small{font-size:.8rem;color:#6a7a84;}
   </style>
 </head>
@@ -169,52 +133,49 @@
   <header class="hero">
     <div class="container">
       <div class="col-lg-8">
+
         <div class="hero-badge">Nordseeinsel Langeoog</div>
 
         <h1 class="hero-title mt-3">Ihre Auszeit auf Langeoog</h1>
 
-        <!-- NEU: Preis -->
-        <div class="price-badge">
-          Direktvermietung von privat · 120&nbsp;€ pro Nacht
-        </div>
-
         <p class="hero-sub">
-          Ruhige, helle Ferienwohnung für vier Personen im Polderweg&nbsp;31 –
-          ideal für Paare und Familien.
+          Ruhige, helle Ferienwohnung für vier Personen im Polderweg 31 – ideal für Paare und Familien.
         </p>
 
-        <ul class="hero-list">
-          <li>Nur wenige Gehminuten vom Strand und der Dorfmitte</li>
-          <li>Gesamtes Parterre zur alleinigen Nutzung</li>
-          <li>Garten und Terrasse exklusiv</li>
-          <li>Obergeschoss nicht an Gäste vermietet</li>
-        </ul>
+        <!-- NEU: hochwertige Feature-Boxen -->
+        <div class="hero-features">
+          <div class="hero-feature">
+            <strong>Direktvermietung von privat:</strong> 120&nbsp;€ pro Nacht
+          </div>
+          <div class="hero-feature">
+            Nur wenige Gehminuten vom Strand und der Dorfmitte entfernt
+          </div>
+          <div class="hero-feature">
+            Sie bewohnen das gesamte Parterre mit Flur und Vorflur
+          </div>
+          <div class="hero-feature">
+            Garten und Terrasse nutzen Sie exklusiv
+          </div>
+          <div class="hero-feature">
+            Die Wohnung im Obergeschoss wird nicht an Gäste vermietet
+          </div>
+        </div>
 
         <div class="hero-pill">
           <span>Ruhige Lage</span>
-          <span>ca. 500&nbsp;m bis Strand</span>
+          <span>ca. 500 m bis Strand</span>
           <span>Mindestaufenthalt: 7 Tage</span>
           <span>Bettwäsche &amp; Handtücher inkl.</span>
           <span>Nichtraucher</span>
           <span>Keine Haustiere</span>
         </div>
+
       </div>
     </div>
   </header>
 </div>
 
-<!-- REST (unverändert funktional) -->
-
-<section class="container my-5">
-  <div class="card section-card p-4 text-center">
-    <h2 class="section-heading h5">Direkte, persönliche Vermietung</h2>
-    <div class="booking-badge mt-3">
-      <strong>Ohne Vermittlungsgebühren</strong><span>– direkt vom Eigentümer</span>
-    </div>
-  </div>
-</section>
-
-<footer class="text-center py-4">
+<footer>
   <small>&copy; 2025 Ferienwohnung Polderweg 31 – Langeoog</small>
 </footer>
 
